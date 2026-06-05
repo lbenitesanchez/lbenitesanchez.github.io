@@ -333,3 +333,144 @@
   });
 
 })(jQuery);
+
+/* ---------------------------------------------------------------------------
+ * Custom homepage section: Desarrollo de herramientas web.
+ * --------------------------------------------------------------------------- */
+
+(function($) {
+  $(function() {
+    if (!$('#homepage').length) {
+      return;
+    }
+
+    let sectionHtml = `
+      <section id="herramientas-web" class="home-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-4 section-heading">
+              <h1>Desarrollo de herramientas web</h1>
+              <p>Plataformas interactivas para estadística aplicada, docencia e investigación.</p>
+            </div>
+            <div class="col-xs-12 col-md-8">
+              <p>
+                Diseño y desarrollo plataformas web para apoyar la enseñanza de la estadística,
+                la simulación de modelos, el análisis reproducible de datos y la toma de decisiones
+                basada en evidencia. Estas herramientas combinan fundamentos estadísticos,
+                programación científica y visualización interactiva.
+              </p>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="card-simple" style="margin-bottom: 2rem;">
+                    <h3>Calculadoras estadísticas interactivas</h3>
+                    <p>
+                      Herramientas para cálculo, simulación y análisis de sensibilidad en problemas
+                      de inferencia estadística, tamaño de muestra, potencia e intervalos de confianza.
+                    </p>
+                    <p>
+                      <strong>Aplicación:</strong> docencia, consultoría estadística y planificación de estudios.
+                    </p>
+                    <p>
+                      <strong>Tecnologías:</strong> R, Shiny, Python, JavaScript y GitHub Pages.
+                    </p>
+                    <p><span class="label label-primary">En desarrollo</span></p>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                  <div class="card-simple" style="margin-bottom: 2rem;">
+                    <h3>Plataformas para docencia estadística</h3>
+                    <p>
+                      Aplicaciones web para cursos de pregrado y posgrado en estadística,
+                      ciencia de datos, modelos lineales, métodos computacionales y aprendizaje automático.
+                    </p>
+                    <p>
+                      <strong>Aplicación:</strong> aprendizaje activo, visualización de conceptos y laboratorios reproducibles.
+                    </p>
+                    <p>
+                      <strong>Tecnologías:</strong> R Markdown, Quarto, Shiny, Python y visualización interactiva.
+                    </p>
+                    <p><span class="label label-primary">En desarrollo</span></p>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                  <div class="card-simple" style="margin-bottom: 2rem;">
+                    <h3>Herramientas para investigación aplicada</h3>
+                    <p>
+                      Interfaces para simulación, ajuste de modelos, diagnóstico estadístico,
+                      visualización de resultados y automatización de reportes analíticos.
+                    </p>
+                    <p>
+                      <strong>Aplicación:</strong> proyectos de investigación, tesis, artículos y análisis institucional.
+                    </p>
+                    <p>
+                      <strong>Tecnologías:</strong> Python, R, Streamlit, Shiny, APIs y flujos reproducibles.
+                    </p>
+                    <p><span class="label label-primary">En desarrollo</span></p>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                  <div class="card-simple" style="margin-bottom: 2rem;">
+                    <h3>Automatización de reportes y tableros</h3>
+                    <p>
+                      Desarrollo de reportes dinámicos, tableros y prototipos web para comunicar resultados
+                      estadísticos de forma clara, verificable y orientada a la toma de decisiones.
+                    </p>
+                    <p>
+                      <strong>Aplicación:</strong> analítica académica, investigación aplicada y gestión basada en datos.
+                    </p>
+                    <p>
+                      <strong>Tecnologías:</strong> Quarto, HTML/CSS, JavaScript, R y Python.
+                    </p>
+                    <p><span class="label label-primary">En desarrollo</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <p>
+                Próximamente se incorporarán enlaces públicos a cada plataforma, documentación técnica,
+                repositorios de código y ejemplos de uso.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>`;
+
+    let $projectNavLink = $('#navbar-main a[href="/#projects"], #navbar-main a[data-target="#projects"]');
+    let addedWebToolsNavLink = false;
+
+    if ($projectNavLink.length) {
+      $projectNavLink.attr('href', '/#herramientas-web')
+        .attr('data-target', '#herramientas-web')
+        .find('span').text('Herramientas web');
+    } else if (!$('#navbar-main a[href="/#herramientas-web"]').length) {
+      let $teachingNavItem = $('#navbar-main a[href="/#teaching"], #navbar-main a[data-target="#teaching"]').closest('li');
+      if ($teachingNavItem.length) {
+        $teachingNavItem.before('<li class="nav-item"><a href="/#herramientas-web" data-target="#herramientas-web"><span>Herramientas web</span></a></li>');
+        addedWebToolsNavLink = true;
+      }
+    }
+
+    if ($('#projects').length) {
+      $('#projects').replaceWith(sectionHtml);
+    } else if (!$('#herramientas-web').length && $('#teaching').length) {
+      $('#teaching').before(sectionHtml);
+    }
+
+    if (addedWebToolsNavLink) {
+      $('#navbar-main a[href="/#herramientas-web"]').on('click', function(event) {
+        let hash = this.hash;
+        if (hash && $(hash).length && ($('#homepage').length > 0)) {
+          event.preventDefault();
+          let navbarOffset = $('.navbar-header').innerHeight();
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - navbarOffset
+          }, 800);
+        }
+      });
+    }
+  });
+})(jQuery);
