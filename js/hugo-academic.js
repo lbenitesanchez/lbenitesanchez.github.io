@@ -335,7 +335,7 @@
 })(jQuery);
 
 /* ---------------------------------------------------------------------------
- * Custom homepage section: Desarrollo de herramientas web.
+ * Custom homepage section: Web Tool Development.
  * --------------------------------------------------------------------------- */
 
 (function($) {
@@ -345,95 +345,64 @@
     }
 
     let sectionHtml = `
-      <section id="herramientas-web" class="home-section">
+      <section id="web-tools" class="home-section">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-md-4 section-heading">
-              <h1>Desarrollo de herramientas web</h1>
-              <p>Plataformas interactivas para estadística aplicada, docencia e investigación.</p>
+              <h1>Web Tool Development</h1>
+              <p>Recent platforms for applied statistics, teaching, research, and business analytics.</p>
             </div>
             <div class="col-xs-12 col-md-8">
-              <p>
-                Diseño y desarrollo plataformas web para apoyar la enseñanza de la estadística,
-                la simulación de modelos, el análisis reproducible de datos y la toma de decisiones
-                basada en evidencia. Estas herramientas combinan fundamentos estadísticos,
-                programación científica y visualización interactiva.
+              <p class="web-tools-intro">
+                I design and develop interactive platforms that combine statistical modeling,
+                scientific programming, data visualization, simulation, and reproducible analytics.
               </p>
 
-              <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                  <div class="card-simple" style="margin-bottom: 2rem;">
-                    <h3>Calculadoras estadísticas interactivas</h3>
-                    <p>
-                      Herramientas para cálculo, simulación y análisis de sensibilidad en problemas
-                      de inferencia estadística, tamaño de muestra, potencia e intervalos de confianza.
-                    </p>
-                    <p>
-                      <strong>Aplicación:</strong> docencia, consultoría estadística y planificación de estudios.
-                    </p>
-                    <p>
-                      <strong>Tecnologías:</strong> R, Shiny, Python, JavaScript y GitHub Pages.
-                    </p>
-                    <p><span class="label label-primary">En desarrollo</span></p>
+              <div class="web-tool-grid">
+                <article class="web-tool-card">
+                  <div class="web-tool-icon"><i class="fa fa-calculator" aria-hidden="true"></i></div>
+                  <div class="web-tool-content">
+                    <p class="tool-meta">2026 · R · applied research</p>
+                    <h3>Sample Size for CFA and SEM</h3>
+                    <p>R function for estimating the recommended sample size in confirmatory factor analysis and structural equation modeling.</p>
+                    <p class="tool-tags">CFA, SEM, latent models</p>
+                    <a class="tool-link" href="https://github.com/lbenitesanchez/tamano-muestra-afc-sem" target="_blank" rel="noopener">View repository <i class="fa fa-external-link" aria-hidden="true"></i></a>
                   </div>
-                </div>
+                </article>
 
-                <div class="col-xs-12 col-sm-6">
-                  <div class="card-simple" style="margin-bottom: 2rem;">
-                    <h3>Plataformas para docencia estadística</h3>
-                    <p>
-                      Aplicaciones web para cursos de pregrado y posgrado en estadística,
-                      ciencia de datos, modelos lineales, métodos computacionales y aprendizaje automático.
-                    </p>
-                    <p>
-                      <strong>Aplicación:</strong> aprendizaje activo, visualización de conceptos y laboratorios reproducibles.
-                    </p>
-                    <p>
-                      <strong>Tecnologías:</strong> R Markdown, Quarto, Shiny, Python y visualización interactiva.
-                    </p>
-                    <p><span class="label label-primary">En desarrollo</span></p>
+                <article class="web-tool-card">
+                  <div class="web-tool-icon"><i class="fa fa-university" aria-hidden="true"></i></div>
+                  <div class="web-tool-content">
+                    <p class="tool-meta">2026 · Python · Streamlit</p>
+                    <h3>SOMOS UP: Administration Cases</h3>
+                    <p>Simulated cases, visualizations, and interactive dashboards for students and business analytics.</p>
+                    <p class="tool-tags">education, simulated data, dashboards</p>
+                    <a class="tool-link" href="https://github.com/lbenitesanchez/somosUP" target="_blank" rel="noopener">View repository <i class="fa fa-external-link" aria-hidden="true"></i></a>
                   </div>
-                </div>
+                </article>
 
-                <div class="col-xs-12 col-sm-6">
-                  <div class="card-simple" style="margin-bottom: 2rem;">
-                    <h3>Herramientas para investigación aplicada</h3>
-                    <p>
-                      Interfaces para simulación, ajuste de modelos, diagnóstico estadístico,
-                      visualización de resultados y automatización de reportes analíticos.
-                    </p>
-                    <p>
-                      <strong>Aplicación:</strong> proyectos de investigación, tesis, artículos y análisis institucional.
-                    </p>
-                    <p>
-                      <strong>Tecnologías:</strong> Python, R, Streamlit, Shiny, APIs y flujos reproducibles.
-                    </p>
-                    <p><span class="label label-primary">En desarrollo</span></p>
+                <article class="web-tool-card">
+                  <div class="web-tool-icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
+                  <div class="web-tool-content">
+                    <p class="tool-meta">2025 · React · TypeScript</p>
+                    <h3>Accounting Entries Simulator</h3>
+                    <p>Single-page app for recording, simulating, and analyzing accounting entries in real time.</p>
+                    <p class="tool-tags">Vite, Zustand, Dexie, Recharts</p>
+                    <a class="tool-link" href="https://github.com/lbenitesanchez/asientoscontables" target="_blank" rel="noopener">View repository <i class="fa fa-external-link" aria-hidden="true"></i></a>
                   </div>
-                </div>
+                </article>
 
-                <div class="col-xs-12 col-sm-6">
-                  <div class="card-simple" style="margin-bottom: 2rem;">
-                    <h3>Automatización de reportes y tableros</h3>
-                    <p>
-                      Desarrollo de reportes dinámicos, tableros y prototipos web para comunicar resultados
-                      estadísticos de forma clara, verificable y orientada a la toma de decisiones.
-                    </p>
-                    <p>
-                      <strong>Aplicación:</strong> analítica académica, investigación aplicada y gestión basada en datos.
-                    </p>
-                    <p>
-                      <strong>Tecnologías:</strong> Quarto, HTML/CSS, JavaScript, R y Python.
-                    </p>
-                    <p><span class="label label-primary">En desarrollo</span></p>
+                <article class="web-tool-card">
+                  <div class="web-tool-icon"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
+                  <div class="web-tool-content">
+                    <p class="tool-meta">2025 · React · FastAPI · AI</p>
+                    <h3>AI-Powered Educational Chatbots</h3>
+                    <p>Prototypes that connect React interfaces with FastAPI backends and language models.</p>
+                    <p class="tool-tags">OpenAI API, GPT-4o mini, backend modular</p>
+                    <a class="tool-link" href="https://github.com/lbenitesanchez/chatbot-backend-corvus_final" target="_blank" rel="noopener">View repository <i class="fa fa-external-link" aria-hidden="true"></i></a>
                   </div>
-                </div>
+                </article>
               </div>
-
-              <p>
-                Próximamente se incorporarán enlaces públicos a cada plataforma, documentación técnica,
-                repositorios de código y ejemplos de uso.
-              </p>
             </div>
           </div>
         </div>
@@ -443,25 +412,25 @@
     let addedWebToolsNavLink = false;
 
     if ($projectNavLink.length) {
-      $projectNavLink.attr('href', '/#herramientas-web')
-        .attr('data-target', '#herramientas-web')
-        .find('span').text('Herramientas web');
-    } else if (!$('#navbar-main a[href="/#herramientas-web"]').length) {
+      $projectNavLink.attr('href', '/#web-tools')
+        .attr('data-target', '#web-tools')
+        .find('span').text('Web tools');
+    } else if (!$('#navbar-main a[href="/#web-tools"]').length) {
       let $teachingNavItem = $('#navbar-main a[href="/#teaching"], #navbar-main a[data-target="#teaching"]').closest('li');
       if ($teachingNavItem.length) {
-        $teachingNavItem.before('<li class="nav-item"><a href="/#herramientas-web" data-target="#herramientas-web"><span>Herramientas web</span></a></li>');
+        $teachingNavItem.before('<li class="nav-item"><a href="/#web-tools" data-target="#web-tools"><span>Web tools</span></a></li>');
         addedWebToolsNavLink = true;
       }
     }
 
     if ($('#projects').length) {
       $('#projects').replaceWith(sectionHtml);
-    } else if (!$('#herramientas-web').length && $('#teaching').length) {
+    } else if (!$('#web-tools').length && $('#teaching').length) {
       $('#teaching').before(sectionHtml);
     }
 
     if (addedWebToolsNavLink) {
-      $('#navbar-main a[href="/#herramientas-web"]').on('click', function(event) {
+      $('#navbar-main a[href="/#web-tools"]').on('click', function(event) {
         let hash = this.hash;
         if (hash && $(hash).length && ($('#homepage').length > 0)) {
           event.preventDefault();

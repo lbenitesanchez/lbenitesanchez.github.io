@@ -1,4 +1,8 @@
 {
+    "name": "Luis Benites Sánchez",
+    "short_name": "Luis Benites",
+    "theme_color": "#0095eb",
+    "background_color": "#ffffff",
     "icons": [{
       "src": "img/icon.png",
       "sizes": "32x32",
